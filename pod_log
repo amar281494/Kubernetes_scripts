@@ -8,3 +8,7 @@ for pod in $(kubectl get pods -n longhorn-system -o name); do
   echo "----------------------------------------"
 done
 
+Note:
+If the Kubernetes cluster was created using Ranger, run the following command before executing the above script:
+$ alias kubectl='/var/lib/rancher/rke2/bin/kubectl --kubeconfig /etc/rancher/rke2/rke2.yaml'
+
