@@ -1,0 +1,10 @@
+Script to check the logs on all the pods in a spacific namespace:
+
+# pods_log_script.sh
+
+for pod in $(kubectl get pods -n longhorn-system -o name); do
+  echo "Logs for $pod:"
+  kubectl logs -n longhorn-system $pod | grep vol-test02
+  echo "----------------------------------------"
+done
+
